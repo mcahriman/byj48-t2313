@@ -1,6 +1,7 @@
 #ifndef __BYJ_48_H__
 #define __BYJ_48_H__
 
+#include "config.h"
 /**
  * Define stepper motor port.
  * I use here first 4 bits of port, so these ones will be reserved for stepper control

@@ -8,6 +8,8 @@
 #ifndef FRAMEWORK_H_
 #define FRAMEWORK_H_
 
+extern void init();
+extern void loop();
 int main();
 
 

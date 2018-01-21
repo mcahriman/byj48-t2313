@@ -1,8 +1,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#include "config.h"
-#include "byj48.h"
+#include "framework/byj48.h"
+#include "framework/millis.h"
 
 void init() {
 
