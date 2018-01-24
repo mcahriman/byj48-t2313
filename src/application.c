@@ -23,7 +23,7 @@ void loop() {
 	static uint8_t motors_on;
 
 
-	_delay_ms(1)   ;// debug mode 120 Hz (meh)
+	_delay_ms(2)   ;// debug mode 120 Hz (meh)
 
 	if(cooldown_timer != 0) cooldown_timer--;
 
@@ -49,7 +49,7 @@ void loop() {
 	PORTD |= (direction ? _BV(PD5) : 0) | (motors_on ? 0 : _BV(PD4) );
 
 
-	current_step = current_step < 8 ? current_step : 0;
-	current_step = current_step < 0 ? 7 : current_step;
+	current_step = current_step < STEP_COUNT ? current_step : 0;
+	current_step = current_step < 0 ? STEP_COUNT - 1 : current_step;
 
 }

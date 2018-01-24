@@ -33,6 +33,16 @@
 #error BYJ48 port is not defined, please define BYJ48_USE_PORTX macro (X is your port of choise)
 #endif
 
+
+#define HALF_STEP_COUNT 8
+#define FULL_STEP_COUNT 4
+
+#ifndef STEP_COUNT
+#define STEP_COUNT FULL_STEP_COUNT
+#endif
+
+#if STEP_COUNT == HALF_STEP_COUNT
+
 uint8_t byj_steps[] = {
 		0b0001,
 		0b0011,
@@ -43,4 +53,17 @@ uint8_t byj_steps[] = {
 		0b1000,
 		0b1001
 };
+
+#elif STEP_COUNT == FULL_STEP_COUNT
+
+uint8_t byj_steps[] = {
+		0b0011,
+		0b0110,
+		0b1100,
+		0b1001
+};
+
+#endif
+
+
 #endif /* __BYJ_48_H__ */
